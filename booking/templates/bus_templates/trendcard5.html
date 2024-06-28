@@ -154,7 +154,7 @@
         {% for i in res %}
         <div class="image-container">
             {% if i.Image %}
-            <img src="{{ i.Image }}" class="w-100" style="height: 410px;" id="img">
+            <img src="{{ i.Image.url }}" class="w-100" style="height: 410px;" id="img">
             <a href="/bus_main/" class="more-info-link">Book Now</a>
             {% endif %}
         </div>
