@@ -30,15 +30,23 @@ class cab_update(generics.RetrieveUpdateDestroyAPIView):
     queryset=cab_cards.objects.all()
     serializer_class=cab_serialization
 
+#def cab_main(request):
+ #   nav=navbar.objects.all()
+  #  if request.method=="GET":
+   #     ad=requests.get("http://127.0.0.1:8000/cab_insert/")
+    #    res=ad.json()
+     #   k3 = cabwhycontents.objects.all()
+      #  b = cab_faq.objects.all()
+       # return render(request,"cab_templates/cabsearch.html",{'nav':nav,'res':res,'k3':k3,'b':b})
+
 def cab_main(request):
-    nav=navbar.objects.all()
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/cab_insert/")
-        res=ad.json()
+        nav=navbar.objects.all()
+        res=cab_cards.objects.all()
         k3 = cabwhycontents.objects.all()
         b = cab_faq.objects.all()
         return render(request,"cab_templates/cabsearch.html",{'nav':nav,'res':res,'k3':k3,'b':b})
-  
+
 ############# 2nd page for 1st card ####################
 
 class cabcard1(generics.ListCreateAPIView):
@@ -50,14 +58,17 @@ class festive_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=festive_serialization
 
     
+#def festive_main(request):
+ #   if request.method == "GET":
+  #      ad = requests.get("http://127.0.0.1:8000/festive_insert/")
+    #    res = ad.json()
+   #     return render(request, "cab_templates/festive.html", {'res': res})
+
+
 def festive_main(request):
     if request.method == "GET":
-        ad = requests.get("http://127.0.0.1:8000/festive_insert/")
-        res = ad.json()
+        res = cab_festive.objects.all()
         return render(request, "cab_templates/festive.html", {'res': res})
-
-
-
 ############# 2nd page for 2nd card card ####################
 
 class cabcard2(generics.ListCreateAPIView):
@@ -69,12 +80,16 @@ class rental_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=rental_serialization
 
 
+#def rental_main(request):
+ #   if request.method == "GET":
+  #      ad = requests.get("http://127.0.0.1:8000/rental_insert/")
+   #     res = ad.json()
+    #    return render(request, "cab_templates/rental_card.html", {'res': res})
+
 def rental_main(request):
     if request.method == "GET":
-        ad = requests.get("http://127.0.0.1:8000/rental_insert/")
-        res = ad.json()
+        res= cab_rental.objects.all()
         return render(request, "cab_templates/rental_card.html", {'res': res})
-
 
 
 ############# 2nd page for 3rd card ####################
@@ -88,12 +103,16 @@ class anytime_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=anytime_serialization
 
 
+#def anytime_main(request):
+ #   if request.method=="GET":
+  #      ad=requests.get("http://127.0.0.1:8000/anytime_insert/")
+   #     res=ad.json()
+    #    return render(request,"cab_templates/anytime_card.html",{'res':res})
+
 def anytime_main(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/anytime_insert/")
-        res=ad.json()
+        res= cab_anytime.objects.all()
         return render(request,"cab_templates/anytime_card.html",{'res':res})
-
 
 
 ############# 2nd page for 4th card ####################
@@ -107,13 +126,16 @@ class ride_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=ride_serialization
 
 
+#def ride_main(request):
+ #   if request.method=="GET":
+  #      ad=requests.get("http://127.0.0.1:8000/ride_insert/")
+   #     res=ad.json()
+    #    return render(request,"cab_templates/ride_card.html",{'res':res})
+
 def ride_main(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/ride_insert/")
-        res=ad.json()
+        res= cab_ride.objects.all()
         return render(request,"cab_templates/ride_card.html",{'res':res})
-
-
 
 ############# 2nd page for 5th card ####################
 
@@ -126,12 +148,16 @@ class familyfun_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=familyfun_serialization
 
 
+#def familyfun_main(request):
+ #   if request.method=="GET":
+  #      ad=requests.get("http://127.0.0.1:8000/familyfun_insert/")
+   #     res=ad.json()
+    #    return render(request,"cab_templates/familyfun_card.html",{'res':res})
+
 def familyfun_main(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/familyfun_insert/")
-        res=ad.json()
+        res= cab_familyfun.objects.all()
         return render(request,"cab_templates/familyfun_card.html",{'res':res})
-
 
 ############# 2nd page for 6th card ####################
 
@@ -150,6 +176,10 @@ def easy_main(request):
         res=ad.json()
         return render(request,"cab_templates/easy_card.html",{'res':res})
 
+#def easy_main(request):
+ #   if request.method=="GET":
+  #      res= cab_easy.objects.all()
+   #     return render(request,"cab_templates/easy_card.html",{'res':res})
 
 ############# 2nd page for 7th card ####################
 
@@ -162,12 +192,16 @@ class offer15_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=offer15_serialization
 
 
+#def offer15_main(request):
+ #   if request.method=="GET":
+  #      ad=requests.get("http://127.0.0.1:8000/offer15_insert/")
+   #     res=ad.json()
+    #    return render(request,"cab_templates/offer15_card.html",{'res':res})
+
 def offer15_main(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/offer15_insert/")
-        res=ad.json()
+        res= cab_offer_card.objects.all()
         return render(request,"cab_templates/offer15_card.html",{'res':res})
-
 
 ############# 2nd page for 8th card ####################
 
@@ -180,12 +214,18 @@ class paytm_card_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=paytm_card_serialization
 
 
+#def paytm_card_main(request):
+ #   if request.method=="GET":
+  #      ad=requests.get("http://127.0.0.1:8000/paytm_card_insert/")
+   #     res=ad.json()
+    #    return render(request,"cab_templates/paytm_card.html",{'res':res})
+
+
 def paytm_card_main(request):
     if request.method=="GET":
-        ad=requests.get("http://127.0.0.1:8000/paytm_card_insert/")
-        res=ad.json()
+        res= cab_paytm_card.objects.all()
         return render(request,"cab_templates/paytm_card.html",{'res':res})
-
+        
 ##########################  why choose content for cabs #######################
 
 def WhyChoose(request):
