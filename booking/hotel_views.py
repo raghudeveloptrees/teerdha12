@@ -22,8 +22,6 @@ def hotelform(request):
     kl=hotel_faqitem.objects.all()
     nav=navbar.objects.all()
     if request.method=="GET":
-        #cl=requests.get("http://127.0.0.1:8000/cardsapi/")
-       # res=cl.json()
         res=hotel_cards.objects.all()
         return render(request,"hotel_templates/searchform.html",{'nav':nav,'res':res,'k':k,'kl':kl})
         # return render(request,"hotel_templates/form.html",{'res':res})
