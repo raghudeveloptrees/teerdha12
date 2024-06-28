@@ -130,7 +130,7 @@
         {% for i in res12 %}
         <div class="image-container">
             {% if i.photo %}
-            <img src="{{ i.photo }}" class="w-100" style="height: 410px;" id="img">
+            <img src="{{ i.photo.url }}" class="w-100" style="height: 410px;" id="img">
             <a href="/bus_main/" class="more-info-link">Book Now</a>
             {% endif %}
         </div>
