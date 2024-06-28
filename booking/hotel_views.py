@@ -7,17 +7,29 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+#def hotelform(request):
+ #   k=hotel_quary.objects.all()
+  #  k1=hotel_faqitem.objects.all()
+   # nav=navbar.objects.all()
+  #  if request.method=="GET":
+    #    cl=requests.get("http://127.0.0.1:8000/cardsapi/")
+     #   res=cl.json()
+      #  return render(request,"hotel_templates/searchform.html",{'nav':nav,'res':res,'k':k,'k1':k1})
+        # return render(request,"hotel_templates/form.html",{'res':res})
+
 def hotelform(request):
     k=hotel_quary.objects.all()
-    k1=hotel_faqitem.objects.all()
+    kl=hotel_faqitem.objects.all()
     nav=navbar.objects.all()
-
     if request.method=="GET":
-        cl=requests.get("http://127.0.0.1:8000/cardsapi/")
-        res=cl.json()
-    
-        return render(request,"hotel_templates/searchform.html",{'nav':nav,'res':res,'k':k,'k1':k1})
+        #cl=requests.get("http://127.0.0.1:8000/cardsapi/")
+       # res=cl.json()
+        res=hotel_cards.objects.all()
+        return render(request,"hotel_templates/searchform.html",{'nav':nav,'res':res,'k':k,'kl':kl})
         # return render(request,"hotel_templates/form.html",{'res':res})
+
+
+
 
 class cardsapi(generics.ListCreateAPIView):
     queryset=hotel_cards.objects.all()
@@ -55,14 +67,20 @@ class axispolicy_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_axispolicy_serialization
 
 
+#def hotel_axisform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/axis_api/")
+   #     rdx=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/axis_api1/")
+     #   rx=sk.json()
+      # rd=si.json()
+        #return render(request,"hotel_templates/axis_offer.html",{'rdx':rdx,'rx':rx,'rd':rd})
+
 def hotel_axisform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/axis_api/")
-        rdx=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/axis_api1/")
-        rx=sk.json()
-        si=requests.get("http://127.0.0.1:8000/axispolicy_api/")
-        rd=si.json()
+        rdx=hotel_axisoffer.objects.all()
+        rx=hotel_axisoffer1.objects.all()
+        rd=hotel_axispolicy.objects.all()
         return render(request,"hotel_templates/axis_offer.html",{'rdx':rdx,'rx':rx,'rd':rd})
 
 #...icici...#
@@ -93,14 +111,22 @@ class icicipolicy_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_icicipolicy_serialization
 
 
+#def hotel_iciciform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/icici_api/")
+   #     p=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/icici_api1/")
+     #   q=sk.json()
+      #  si=requests.get("http://127.0.0.1:8000/icicipolicy_api/")
+       # r=si.json()
+        #return render(request,"hotel_templates/icici_offer.html",{'p':p,'q':q,'r':r})
+
+
 def hotel_iciciform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/icici_api/")
-        p=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/icici_api1/")
-        q=sk.json()
-        si=requests.get("http://127.0.0.1:8000/icicipolicy_api/")
-        r=si.json()
+        p=hotel_icicioffer.objects.all()
+        q=hotel_icicioffer1.objects.all()
+        r=hotel_icicipolicy.objects.all()
         return render(request,"hotel_templates/icici_offer.html",{'p':p,'q':q,'r':r})
 
 
@@ -133,15 +159,23 @@ class hsbcpolicy_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_hsbcpolicy_serialization
 
 
+#def hotel_hsbcform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/hsbc_api/")
+   #     sp=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/hsbc_api1/")
+     #   pq=sk.json()
+      #  si=requests.get("http://127.0.0.1:8000/hsbcpolicy_api/")
+       # rj=si.json()
+        #return render(request,"hotel_templates/hsbc_offer.html",{'sp':sp,'pq':pq,'rj':rj})
+
 def hotel_hsbcform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/hsbc_api/")
-        sp=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/hsbc_api1/")
-        pq=sk.json()
-        si=requests.get("http://127.0.0.1:8000/hsbcpolicy_api/")
-        rj=si.json()
+        sp=hotel_hsbcoffer.objects.all()
+        pq=hotel_hsbcoffer1.objects.all()
+        rj=hotel_hsbcpolicy.objects.all()
         return render(request,"hotel_templates/hsbc_offer.html",{'sp':sp,'pq':pq,'rj':rj})
+
 
 #...SBI...#
     
@@ -171,14 +205,21 @@ class sbipolicy_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_sbipolicy_serialization
 
 
+#def hotel_sbiform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/sbi_api/")
+   #     ps=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/sbi_api1/")
+     #   pk=sk.json()
+      #  si=requests.get("http://127.0.0.1:8000/sbipolicy_api/")
+       # pspk=si.json()
+        #return render(request,"hotel_templates/sbi_offer.html",{'ps':ps,'pk':pk,'pspk':pspk})
+
 def hotel_sbiform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/sbi_api/")
-        ps=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/sbi_api1/")
-        pk=sk.json()
-        si=requests.get("http://127.0.0.1:8000/sbipolicy_api/")
-        pspk=si.json()
+        ps=hotel_sbioffer.objects.all()
+        pk=hotel_sbioffer1.objects.all()
+        pspk=hotel_sbipolicy.objects.all()
         return render(request,"hotel_templates/sbi_offer.html",{'ps':ps,'pk':pk,'pspk':pspk})
 
 #...KOTAK...#
@@ -209,14 +250,21 @@ class hotel_kotakpolicyupdate(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_kotakpolicy_serialization
 
 
+#def hotel_kotakform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/hotel_kotakapi/")
+   #     aib=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/hotel_kotakapi1/")
+     #   bic=sk.json()
+      #  si=requests.get("http://127.0.0.1:8000/hotel_kotakpolicyapi/")
+       # cid=si.json()
+        #return render(request,"hotel_templates/hotel_kotakoffer.html",{'aib':aib,'bic':bic,'cid':cid})
+
 def hotel_kotakform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/hotel_kotakapi/")
-        aib=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/hotel_kotakapi1/")
-        bic=sk.json()
-        si=requests.get("http://127.0.0.1:8000/hotel_kotakpolicyapi/")
-        cid=si.json()
+        aib=hotel_kotakoffer.objects.all()
+        bic=hotel_kotakoffer1.objects.all()
+        cid=hotel_kotakpolicy.objects.all()
         return render(request,"hotel_templates/hotel_kotakoffer.html",{'aib':aib,'bic':bic,'cid':cid})
 
 
@@ -249,14 +297,21 @@ class hotel_bobpolicyupdate(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_bobpolicy_serialization
 
 
+#def hotel_bobform(request):
+ #   if request.method=="GET":
+    #    sh=requests.get("http://127.0.0.1:8000/hotel_bobapi/")
+  #      bob=sh.json()
+   #     sk=requests.get("http://127.0.0.1:8000/hotel_bobapi1/")
+     #   bob1=sk.json()
+      #  si=requests.get("http://127.0.0.1:8000/hotel_bobpolicyapi/")
+       # bob2=si.json()
+        #return render(request,"hotel_templates/hotel_boboffer.html",{'bob':bob,'bob1':bob1,'bob2':bob2})
+
 def hotel_bobform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/hotel_bobapi/")
-        bob=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/hotel_bobapi1/")
-        bob1=sk.json()
-        si=requests.get("http://127.0.0.1:8000/hotel_bobpolicyapi/")
-        bob2=si.json()
+        bob=hotel_boboffer.objects.all()
+        bob1=hotel_boboffer1.objects.all()
+        bob2=hotel_bobpolicy.objects.all()
         return render(request,"hotel_templates/hotel_boboffer.html",{'bob':bob,'bob1':bob1,'bob2':bob2})
 
 
@@ -288,14 +343,21 @@ class federalpolicy_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=hotel_federalpolicy_serialization
 
 
+#def hotel_federalform(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/federal_api/")
+   #     abi=sh.json()
+   #     sk=requests.get("http://127.0.0.1:8000/federal_api1/")
+   #     bci=sk.json()
+    #    si=requests.get("http://127.0.0.1:8000/federalpolicy_api/")
+     #   cdi=si.json()
+      #  return render(request,"hotel_templates/federal_offer.html",{'abi':abi,'bci':bci,'cdi':cdi})
+
 def hotel_federalform(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/federal_api/")
-        abi=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/federal_api1/")
-        bci=sk.json()
-        si=requests.get("http://127.0.0.1:8000/federalpolicy_api/")
-        cdi=si.json()
+        abi=hotel_federaloffer.objects.all()
+        bci=hotel_federaloffer1.objects.all()
+        cdi=hotel_federalpolicy.objects.all()
         return render(request,"hotel_templates/federal_offer.html",{'abi':abi,'bci':bci,'cdi':cdi})
 
 
