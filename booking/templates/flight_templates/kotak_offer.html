@@ -75,7 +75,7 @@ max-width: 1600px;
 
   <center>
     <div class="content">
-    <img class="w-100" src="{{ j.image }}"  style="height: 400px;" id="img">
+    <img class="w-100" src="{{ j.image.url }}"  style="height: 400px;" id="img">
     <a href="/" class="btn btn-on-image">Book Now</a></div> 
    
     </center>
@@ -106,7 +106,7 @@ max-width: 1600px;
         <div class="row" id="sj" style="height: 300px;">
             {% for i in rx %}
                 <div class="col-3 m-5 card" style="width: 300px;border-radius: 30px;position:relative;">
-                    <img src="{{ i.image1 }}" alt="image1" style="border-radius: 30px;margin-top: 10px;"><br>
+                    <img src="{{ i.image1.url }}" alt="image1" style="border-radius: 30px;margin-top: 10px;"><br>
                     <div class="h5">
                         {{i.category}}
                     </div>
