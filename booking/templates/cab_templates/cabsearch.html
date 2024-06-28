@@ -688,7 +688,7 @@
                 {% for card in res %}
                 <div class="custom-card card-{{ forloop.counter }}">
                     {% if card.photo %}
-                    <center><img src="{{ card.photo }}" class="card-img" id="img"></center>
+                    <center><img src="{{ card.photo.url }}" class="card-img" id="img"></center>
                     {% endif %}
                     <div class="custom-card-content">
                         <a href="{{ card.Link }}" class="card-link">
