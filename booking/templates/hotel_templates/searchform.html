@@ -495,7 +495,7 @@ h4 {
                 {% for i in res %}
                 <div class="custom-card card-{{ forloop.counter }}">
                     {% if i.image %}
-                    <img src="{{ i.image }}" class="card-img" height="200px" width="150px" id="img">
+                    <img src="{{ i.image.url }}" class="card-img" height="200px" width="150px" id="img">
                     {% endif %}
                     <div class="custom-card-content">
                         <a href="{{ i.url }}" class="card-link"> 
