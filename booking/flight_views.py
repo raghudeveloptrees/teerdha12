@@ -70,14 +70,23 @@ def faq_home(request):
     return render(request,"flight_templates/flightfaq_table.html",{'k3': k3,'Sidebar':Sidebar, 'nav_item':nav_item})  
 
 
+#def flights(request):
+ #   if request.method=="GET":
+  #      nav=navbar.objects.all()
+   #     ad=requests.get("http://127.0.0.1:8000/flight_home/")
+    #    res=ad.json()
+     #   k3 = flightfaqs.objects.all()
+     #   wc = requests.get("http://127.0.0.1:8000/why_choose_lc/")
+      #  wcu = wc.json()
+      #  k =choosing_content.objects.all()     
+      #  return render(request,"flight_templates/c.html",{'nav':nav,'res':res,'k3':k3,'wcu':wcu,'k':k})
+
 def flights(request):
     if request.method=="GET":
         nav=navbar.objects.all()
-        ad=requests.get("http://127.0.0.1:8000/flight_home/")
-        res=ad.json()
+        res=flights_offercards.objects.all()
         k3 = flightfaqs.objects.all()
-        wc = requests.get("http://127.0.0.1:8000/why_choose_lc/")
-        wcu = wc.json()
+        wcu=flights_offercards.objects.all()
         k =choosing_content.objects.all()     
         return render(request,"flight_templates/c.html",{'nav':nav,'res':res,'k3':k3,'wcu':wcu,'k':k})
 
@@ -122,21 +131,29 @@ class kotakpolicy_update1(generics.RetrieveUpdateDestroyAPIView):
     queryset=flights_policy1.objects.all()
     serializer_class=kotakpolicy1_serialization    
 
+#def kotak(request):
+ #   if request.method=="GET":
+  #      sh=requests.get("http://127.0.0.1:8000/kotak_api/")
+   #     rdx=sh.json()
+    #    sk=requests.get("http://127.0.0.1:8000/kotak_api1/")
+     #   rx=sk.json()
+     #   sj=requests.get("http://127.0.0.1:8000/kotakterms_api/")
+     #   rs=sj.json()
+     #   si=requests.get("http://127.0.0.1:8000/kotakpolicy_api/")
+     #   rd=si.json()
+     #   sl=requests.get("http://127.0.0.1:8000/kotakpolicy_api1/")
+     #   rp=sl.json()
+     #   return render(request,"flight_templates/kotak_offer.html",{'rdx':rdx,'rx':rx,'rs':rs,'rd':rd,'rp':rp})
+
 def kotak(request):
     if request.method=="GET":
-        sh=requests.get("http://127.0.0.1:8000/kotak_api/")
-        rdx=sh.json()
-        sk=requests.get("http://127.0.0.1:8000/kotak_api1/")
-        rx=sk.json()
-        sj=requests.get("http://127.0.0.1:8000/kotakterms_api/")
-        rs=sj.json()
-        si=requests.get("http://127.0.0.1:8000/kotakpolicy_api/")
-        rd=si.json()
-        sl=requests.get("http://127.0.0.1:8000/kotakpolicy_api1/")
-        rp=sl.json()
-        
+        rdx=flights_kotak_offer.objects.all()
+        rx=flights_kotak_offer1.objects.all()
+        rs=flights_kotak_terms.objects.all()
+        rd=flights_policy.objects.all()
+        rp=flights_policy1.objects.all()
         return render(request,"flight_templates/kotak_offer.html",{'rdx':rdx,'rx':rx,'rs':rs,'rd':rd,'rp':rp})
-
+    
 ## first booking ##
     
 
@@ -157,14 +174,21 @@ class flight_offerfirst1_rud(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=flight_first1ser
 
 
+#def flight_offer_1(request):
+ #   if request.method == "GET":
+  #      fo = requests.get("http://127.0.0.1:8000/flight_offerfirst_lc/")
+   #     flight = fo.json()
+    #    fo1 = requests.get("http://127.0.0.1:8000/flight_offerfirst1_lc/")
+     #   flight_1 = fo1.json()
+      #  return render(request,"flight_templates/flight_offer_1.html", {'flight': flight, 'flight_1': flight_1})
+
 def flight_offer_1(request):
     if request.method == "GET":
-        fo = requests.get("http://127.0.0.1:8000/flight_offerfirst_lc/")
-        flight = fo.json()
-        fo1 = requests.get("http://127.0.0.1:8000/flight_offerfirst1_lc/")
-        flight_1 = fo1.json()
+        flight = flight_offer_first.objects.all()
+        flight_1 = flight_offer_first1.objects.all()
         return render(request,"flight_templates/flight_offer_1.html", {'flight': flight, 'flight_1': flight_1})
 
+    
 
 #.........................................Yes Bank  card1 start here.....................................
 #.................card1_offer................
@@ -198,14 +222,22 @@ class card1_offerterms_up(generics.RetrieveUpdateDestroyAPIView):
 
 #.................... To Retrieve the data...........................
 
+#def yes_bank_offercard(request):
+ #   if request.method=="GET":
+  #      co=requests.get("http://127.0.0.1:8000/card1_offerapi/")
+   #     res1=co.json()
+    #    cod=requests.get("http://127.0.0.1:8000/card1_offerdetailesapi/")
+     #   res2=cod.json()
+      #  cot=requests.get("http://127.0.0.1:8000/card1_offer_termsapi/")
+      #  res3=cot.json()
+      #  return render(request,"flight_templates/yes_bank_offercard.html",{'res1':res1,'res2':res2,'res3':res3})
+
+
 def yes_bank_offercard(request):
     if request.method=="GET":
-        co=requests.get("http://127.0.0.1:8000/card1_offerapi/")
-        res1=co.json()
-        cod=requests.get("http://127.0.0.1:8000/card1_offerdetailesapi/")
-        res2=cod.json()
-        cot=requests.get("http://127.0.0.1:8000/card1_offer_termsapi/")
-        res3=cot.json()
+        res1=card1_offers.objects.all()
+        res2=card1_offerdetailes.objects.all()
+        res3=card1_terms_conditions.objects.all()
         return render(request,"flight_templates/yes_bank_offercard.html",{'res1':res1,'res2':res2,'res3':res3})
 
 ##........refundcards........##
@@ -230,13 +262,20 @@ class zc_terms_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=zc_terms_serialization
 
 
+#def zerocancellation(request):
+ #   if request.method=="GET":
+  #      zco=requests.get("http://127.0.0.1:8000/zc_offerapi/")
+   #     res1=zco.json()
+    #    zct=requests.get("http://127.0.0.1:8000/zc_termsapi/")
+     #   res2=zct.json()
+      #  return render(request,"flight_templates/zero_offer.html",{'res1':res1,'res2':res2})  
+
 def zerocancellation(request):
     if request.method=="GET":
-        zco=requests.get("http://127.0.0.1:8000/zc_offerapi/")
-        res1=zco.json()
-        zct=requests.get("http://127.0.0.1:8000/zc_termsapi/")
-        res2=zct.json()
-        return render(request,"flight_templates/zero_offer.html",{'res1':res1,'res2':res2})  
+        res1=Zero_cancellation_offer.objects.all()
+        res2=Zero_cancellation_terms.objects.all()
+        return render(request,"flight_templates/zero_offer.html",{'res1':res1,'res2':res2}) 
+
 
 #......why choose us...#
     
@@ -323,14 +362,21 @@ class icic_terms_update(generics.RetrieveUpdateDestroyAPIView):
     serializer_class=icici_serialization
 
 
+#def icic(request):
+ #   if request.method=="GET":
+  #      zco=requests.get("http://127.0.0.1:8000/icic_offerapi/")
+   #     res1=zco.json()
+    #    zct=requests.get("http://127.0.0.1:8000/icic_termsapi/")
+     #   res2=zct.json()
+      #  return render(request,"flight_templates/icici.html",{'res1':res1,'res2':res2})        
+
 def icic(request):
     if request.method=="GET":
-        zco=requests.get("http://127.0.0.1:8000/icic_offerapi/")
-        res1=zco.json()
-        zct=requests.get("http://127.0.0.1:8000/icic_termsapi/")
-        res2=zct.json()
-        return render(request,"flight_templates/icici.html",{'res1':res1,'res2':res2})        
-    
+        res1=icic_offer.objects.all()
+        res2=icic_terms.objects.all()
+        return render(request,"flight_templates/icici.html",{'res1':res1,'res2':res2})
+
+
 from .models import sbiimage,sbioffer,sbiterms
 from .serialization import sbiimage_serialization,sbioffer_serialization,sbiterms_serialization
 
@@ -360,15 +406,23 @@ class sbiterms_up(generics.RetrieveUpdateDestroyAPIView):
     queryset=sbiterms.objects.all()
     serializer_class=sbiterms_serialization
 
+#def sbi(request):
+ #   if request.method=="GET":
+  #      si=requests.get("http://127.0.0.1:8000/sbiimageapi/")
+   #     res1=si.json()
+    #    so=requests.get("http://127.0.0.1:8000/sbiofferapi/")
+     #   res2=so.json()
+     #   st=requests.get("http://127.0.0.1:8000/sbitermsapi/")
+     #   res3=st.json()
+      #  return render(request,"flight_templates/sbi.html",{'res1':res1,'res2':res2,'res3':res3})  
+
 def sbi(request):
     if request.method=="GET":
-        si=requests.get("http://127.0.0.1:8000/sbiimageapi/")
-        res1=si.json()
-        so=requests.get("http://127.0.0.1:8000/sbiofferapi/")
-        res2=so.json()
-        st=requests.get("http://127.0.0.1:8000/sbitermsapi/")
-        res3=st.json()
+        res1=sbiimage.objects.all()
+        res2=sbioffer.objects.all()
+        res3=sbiterms.objects.all()
         return render(request,"flight_templates/sbi.html",{'res1':res1,'res2':res2,'res3':res3})  
+
 
 class hdfc_logo_lc(generics.ListCreateAPIView):
     queryset=hdfc_logo.objects.all()
@@ -386,16 +440,21 @@ class hdfc_offer_rud(generics.RetrieveUpdateDestroyAPIView):
     queryset=hdfc_offer.objects.all()
     serializer_class=hdfc_offerser  
 
-def hdfc_offer_card(request):
-    if request.method=="GET":
-        hl=hdfc_logo.objects.all()
+#def hdfc_offer_card(request):
+ #   if request.method=="GET":
+  #      hl=hdfc_logo.objects.all()
         # hl=requests.get("http://127.0.0.1:8000/hdfc_logo_lc/")
         # hdfc_logo=hl.json()
         h=hdfc_offer.objects.all()
         # h=requests.get("http://127.0.0.1:8000/hdfc_offer_lc/")
         # hdfc=h.json()
-        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':h,'hdfc_logo':hl})  
+        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':h,'hdfc_logo':hl}) 
 
+def hdfc_offer_card(request):
+    if request.method=="GET":
+        hl=hdfc_logo.objects.all()
+        h=hdfc_offer.objects.all()
+        return render(request,"flight_templates/hdfc_offer_card.html",{'hdfc':h,'hdfc_logo':hl})  
 
 
 def flight_offers_card_page_2(request):
