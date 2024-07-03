@@ -5,7 +5,7 @@ cd /var/lib/jenkins/workspace/django
 
 $PWD
 
-source praveen/bin/activate
+source ram/bin/activate
 pip3 install gunicorn
 
 python3 manage.py makemigrations
