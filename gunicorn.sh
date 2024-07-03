@@ -7,7 +7,7 @@ $PWD
 
 source ram/bin/activate
 pip3 install gunicorn
-sudo apt install libmysqlclent-dev
+sudo apt install libmysqlclient-dev
 sudo apt install pkg-config
 python3 manage.py makemigrations
 python3 manage.py migrate
