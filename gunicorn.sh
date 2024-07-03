@@ -7,9 +7,10 @@ $PWD
 
 source ram/bin/activate
 pip3 install gunicorn
-sudo apt install libmysqlclient-dev
-sudo apt install pkg-config
-sudo apt install mysqlclient
+sudo apt-get install libmysqlclient-dev
+sudo yum install mysql-devel  
+sudo apt install pkg-config --exists mysqlclient
+sudo apt install pkg-config --exists libmariadb
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py collectstatic 
