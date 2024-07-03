@@ -38,6 +38,7 @@ pip3 install -r requirements.txt
 pip3 install django
 pip install requests
 pip install django-rest-framework
+pip install gunicorn
 echo "Requirements Installed."
 echo -e "\n\n\n"
 
