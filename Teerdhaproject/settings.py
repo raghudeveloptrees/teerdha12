@@ -82,11 +82,11 @@ WSGI_APPLICATION = 'Teerdhaproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'booking_up',
+        'NAME':'booking',
         'POST':'3306',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'USER':'root'
+        'PASSWORD':'admin123456',
+        'HOST':'teerdha.c528kg6649yp.us-east-1.rds.amazonaws.com',
+        'USER':'admin'
     }
 }
 
@@ -126,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT=os.path.join(BASE_DIR,"staic")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
