@@ -14,14 +14,14 @@ else
     sudo apt install gunicorn -y
 fi
 
-    python3 -m venv praveen
+    python3 -m venv ram
     
-if [ -d "praveen" ]
+if [ -d "ram" ]
 then
     echo "Python virtual environment exists."
 else
     echo "Creating a virtual environment"
-    python3 -m venv praveen
+    python3 -m venv ram
 fi
 
 echo "The current directory"
@@ -29,7 +29,7 @@ echo $PWD
 echo -e "\n\n\n"
 
 echo "Activating the virtual environment"
-source praveen/bin/activate
+source ram/bin/activate
 echo -e "\n\n\n"
 
 echo -e "\n\n\n"
