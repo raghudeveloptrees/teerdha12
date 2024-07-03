@@ -35,6 +35,10 @@ echo -e "\n\n\n"
 echo -e "\n\n\n"
 echo "Installing Requirements...."
 pip3 install -r requirements.txt
+pip3 install django
+pip install requests
+pip install mysqlclient
+pip install django-rest-framework
 echo "Requirements Installed."
 echo -e "\n\n\n"
 
