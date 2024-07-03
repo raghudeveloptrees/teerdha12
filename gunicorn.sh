@@ -1,13 +1,14 @@
 
 #!/bin/bash
 
-cd /var/lib/jenkins/workspace/django
+cd /var/lib/jenkins/workspace/teerdha12
 
 $PWD
 
 source ram/bin/activate
 pip3 install gunicorn
-
+sudo apt install libmysqlclent-dev
+sudo apt install pkg-config
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py collectstatic 
