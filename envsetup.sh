@@ -41,7 +41,7 @@ echo -e "\n\n\n"
 
 echo -e "\n\n\n"
 echo "Installing Requirements...."
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 echo "Requirements Installed."
 echo -e "\n\n\n"
 
