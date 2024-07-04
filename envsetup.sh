@@ -8,7 +8,7 @@ else
     echo "Installing virtualenv......"
     sudo apt install virtualenv -y
     sudo apt install python3-venv -y
-    sudo apt install python3-pip3 -y
+    sudo apt install python3-pip -y
     sudo apt install nginx -y
     sudo apt install gunicorn -y
 fi
@@ -33,8 +33,8 @@ echo -e "\n\n\n"
 
 echo -e "\n\n\n"
 echo "Installing Requirements...."
-pip3 install -r requirements.txt
-pip3 install gunicorn
+pip install -r requirements.txt
+pip install gunicorn
 echo "Requirements Installed."
 echo -e "\n\n\n"
 
