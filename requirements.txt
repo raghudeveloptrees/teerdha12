@@ -7,3 +7,7 @@ pillow
 sqlparse
 tzdata
 urllib3
+django
+requests
+mysqlclient
+django-rest-framework
