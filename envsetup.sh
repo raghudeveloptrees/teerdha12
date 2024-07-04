@@ -21,14 +21,14 @@ else
     
 fi
 
-    python3 -m venv ram
+    python3 -m venv krishna
     
-if [ -d "ram" ]
+if [ -d "krishna" ]
 then
     echo "Python virtual environment exists."
 else
     echo "Creating a virtual environment"
-    python3 -m venv ram
+    python3 -m venv krishna
 fi
 
 echo "The current directory"
@@ -36,7 +36,7 @@ echo $PWD
 echo -e "\n\n\n"
 
 echo "Activating the virtual environment"
-source ram/bin/activate
+source krishna/bin/activate
 echo -e "\n\n\n"
 
 echo -e "\n\n\n"
