@@ -5,7 +5,7 @@ cd /var/lib/jenkins/workspace/teerdha12
 
 $PWD
 
-source ram/bin/activate
+source krishna/bin/activate
 pip3 install gunicorn
 sudo apt-get install libmysqlclient-dev
 sudo yum install mysql-devel  
