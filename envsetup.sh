@@ -6,6 +6,7 @@ if command -v virtualenv &> /dev/null; then
     echo "virtualenv is already installed."
 else
     echo "Installing virtualenv......"
+    sudo apt install -y python3-virtualenv
     sudo apt install virtualenv -y
     sudo apt install python3-venv -y
     sudo apt install python3-pip -y
@@ -33,8 +34,7 @@ echo -e "\n\n\n"
 
 echo -e "\n\n\n"
 echo "Installing Requirements...."
-pip install -r requirements.txt
-pip install gunicorn
+pip3 install -r requirements.txt
 echo "Requirements Installed."
 echo -e "\n\n\n"
 
