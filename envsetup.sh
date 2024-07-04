@@ -6,12 +6,19 @@ if command -v virtualenv &> /dev/null; then
     echo "virtualenv is already installed."
 else
     echo "Installing virtualenv......"
+    sudo apt update
     sudo apt install -y python3-virtualenv
     sudo apt install virtualenv -y
     sudo apt install python3-venv -y
     sudo apt install python3-pip -y
     sudo apt install nginx -y
     sudo apt install gunicorn -y
+    sudo apt install supervisor -y
+    sudo apt install libmysqlclient-dev -y
+    sudo apt install pkg-config -y
+    sudo apt install libpq-dev -y
+    
+    
 fi
 
     python3 -m venv ram
@@ -37,6 +44,9 @@ echo "Installing Requirements...."
 pip3 install -r requirements.txt
 echo "Requirements Installed."
 echo -e "\n\n\n"
+
+python3 -c "import psycopg2"
+
 
 echo "Checking for logs"
 if [ -d "logs" ]
