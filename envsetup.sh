@@ -6,10 +6,9 @@ if command -v virtualenv &> /dev/null; then
     echo "virtualenv is already installed."
 else
     echo "Installing virtualenv......"
-    sudo apt install pip3
     sudo apt install virtualenv -y
     sudo apt install python3-venv -y
-    sudo apt install python3-pip -y
+    sudo apt install python3-pip3 -y
     sudo apt install nginx -y
     sudo apt install gunicorn -y
 fi
